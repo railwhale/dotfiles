@@ -1,6 +1,16 @@
-# ~/.bashrc: Run by bash startup from ~/.profile, maybe by default if there is no ~/.profile
+# ~/.bashrc: Run by bash on startup, from ~/.profile, and maybe by default if there is no ~/.profile
 
+######################################################
+#
+#      ██████╗     █████╗    ███████╗   ██╗  ██╗   ██████╗     ██████╗
+#      ██╔══██╗   ██╔══██╗   ██╔════╝   ██║  ██║   ██╔══██╗   ██╔════╝
+#      ██████╔╝   ███████║   ███████╗   ███████║   ██████╔╝   ██║
+#      ██╔══██╗   ██╔══██║   ╚════██║   ██╔══██║   ██╔══██╗   ██║
+#  ██╗ ██████╔╝   ██║  ██║   ███████║   ██║  ██║   ██║  ██║   ╚██████╗
+#  ╚═╝ ╚═════╝    ╚═╝  ╚═╝   ╚══════╝   ╚═╝  ╚═╝   ╚═╝  ╚═╝    ╚═════╝
+#
 # My Bashrc
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -14,7 +24,7 @@ if [ -f ~/.bash_config]; then
     . ~/.bash_config
 fi
 
-# If you have a custom colour config file (in your home), it will be run
+# If you have a custom colour config file (in your home), run it
 if [ -f ~/.dir_colors ] then
        . ~/.dir_colors
 fi
