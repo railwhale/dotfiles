@@ -1,3 +1,5 @@
+# ~/.bashrc: Run by bash startup from ~/.profile, maybe by default if there is no ~/.profile
+
 # My Bashrc
 # If not running interactively, don't do anything
 case $- in
