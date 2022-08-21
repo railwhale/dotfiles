@@ -5,20 +5,22 @@ alias al="alias $1"
 
 # some very basic ones
 al cl="clear"                # Logical
-al nano="vim"                 # Hehe
+al his="history"             # Quicker
+al nano="vim"                # Hehe
 al v="vim"                   # Quicker
 al edal="v ~/.bash_aliases"  # Edit bash aliases
 al edrc="c ~/.bashrc"        # Edit bashrc
-al bash="source ~/.bashrc"   # So you don't have to exit many times if you are testing .bashrc or .bash_aliases
-
+al bash="source ~/.bashrc"   # So you don't have to exit many times if you are editing esting .bashrc or .bash_aliases
+al .="cd .."
+al ..="cd .. && cd .."
+al al-lis="alias -p"
 
 # ls aliases
 al ls="ls --sort=extension --color=auto"
 al ll="ls -l"
 al la="ls -a"
 al lf="ls -la"
-al .="cd .."
-al ..="cd .. && cd .."
+
 
 # Colours:
 # Enable colour support of some other common commands
@@ -31,6 +33,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
 
 # apt aliases
 al apt="sudo apt"
@@ -45,7 +48,9 @@ al mv="mv -i'"
 
 # Info Aliases
 al now="date +'Time: %T' && date +'Date: %d/%m/%Y'"
-
+al sys-info="neofetch && uname -a && date"
+al neo="neofetch"
+al neof="neo --cpu_temp C"
 
 # Crouton Aliases
 
