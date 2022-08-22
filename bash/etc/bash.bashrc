@@ -1,5 +1,4 @@
 # /etc/bash.bashrc: A system-wide .bashrc file for interactive bash(1) shells.
-# This file should be run at the start of the users .bashrc, so it does not overwrite the users config 
 
 # To enable the settings and commands in this file for login shells as well,
 # this file has to be sourced in /etc/profile.
