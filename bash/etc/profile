@@ -33,6 +33,7 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 
+# Run the user's .bashrc
 if [ -f /etc/bash.bashrc ]; then
         . /etc/bash.bashrc
 fi
