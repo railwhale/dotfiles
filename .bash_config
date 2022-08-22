@@ -1,4 +1,4 @@
-#!/bin/bash
+
 # ~/.bash_config: a custom file, for configurations on 
 # bash startup, so ~/.bashrc doesn't get cluttered
 # My bash configurations, runs every time ~/.bashrc is called
