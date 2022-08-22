@@ -2,6 +2,7 @@
 # bash startup, so ~/.bashrc doesn't get cluttered
 # My bash configurations, runs every time ~/.bashrc is called
 
+
 # Append to history at exit, don't overwrite it
 shopt -s histappend
 
@@ -12,15 +13,18 @@ HISTCONTROL=ignoreboth
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-
-# If set, the pattern "**" (double star) used in a pathname expansion context
-# will
- match all files and zero or more directories and subdirectories.
+# If enabled, '**' (double star) when used in a file path, will match all files and folders in the folder before the double star
 shopt -s globstar
 
+# Enable vi shortcuts/keybinds
+set -o vi
+
 # Set prompt style
-# e.g: [username@hostname ~]
-PS1='[\u@\h: /\W]\$ '
+# e.g: [username@hostname ~] $
+PS1='[\A] \u@\h: \W\n $ '
+# The above template makes this prompt:
+# [hour:minute] username@hostname: ~/Downloads
+# $ 
 
 # Set Basic colours
 blk='\[\033[01;30m\]'   # Black
