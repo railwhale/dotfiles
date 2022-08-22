@@ -1,6 +1,6 @@
-# ~/.bashrc: Run by bash on startup, from ~/.profile, and maybe by default if there is no ~/.profile
+# ~/.bashrc: Run by bash on startup, at the end of /etc/profile (the global .profile)
 
-######################################################
+########################################################################
 #
 #      ██████╗     █████╗    ███████╗   ██╗  ██╗   ██████╗     ██████╗
 #      ██╔══██╗   ██╔══██╗   ██╔════╝   ██║  ██║   ██╔══██╗   ██╔════╝
@@ -13,7 +13,10 @@
 # Contents:
 # Interactive check
 # Run ~/.bash_config
-# 
+# Run ~/.dir_colors
+# Run ~/.bash_aliases
+# Some startup commands
+#####################################################
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -35,7 +38,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Startup commands
-cd ~            # I use this for chromium OS, it starts chronos in /
+cd ~            # I use this for chromium OS, because it starts chronos in /
 clear           # Also for chromium OS, to clear away the crosh prompt, but also works fine for everything else
 date | #lolcat  # Shows the time and date of login, with lolcat if you want
 printf "\n"     # A line between the date and your prompt
