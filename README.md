@@ -11,3 +11,10 @@ If shell is a login shell (e.g. via ssh), /etc/profile is run, followed by ~/.ba
 My ~/.bashrc checks for ~/.bash_config, ~/.dir_colors, and ~/.bash_aliases, in that order.
 
 ( https://zwischenzugs.com/2019/02/27/bash-startup-explained was helpful)
+
+
+
+# Install:
+To automatically install everything, copy and paste this command into your terminal:
+```bash
+cd && git clone https://github.com/railwhale/dotfiles && cd dotfiles && ./install.sh
