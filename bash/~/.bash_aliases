@@ -19,18 +19,25 @@ al nano="vim"                # Hehe
 al v="vim"                   # Quicker
 al svi="sudo vim"            # Quicker
 al edal="v ~/.bash_aliases"  # Edit bash aliases
-al edrc="c ~/.bashrc"        # Edit bashrc
+al edrc="v ~/.bashrc"        # Edit bashrc
 al bash="source ~/.bashrc"   # So you don't have to exit many times if you are editing esting .bashrc or .bash_aliases
 al ?="man"
 
-# file management (ls, cd, etc) aliases
+# file management (ls, cd,) aliases
 al ls="ls --sort=extension --color=auto"
 al ll="ls -l"
 al la="ls -a"
 al lf="ls -la"
+al lg="la | grep"
 al .="cd .."
-al ..="cd .. && cd .."
+al ...="cd .. && cd .."
 alias mkdir="mkdir -pv"
+
+
+# Prevent Accidents!
+al rm="rm -i"
+al cp="cp -i"
+al mv="mv -i'"
 
 # Multipurpose extractor (from github/wrfly/bash_aliases)
 function extract() { 
@@ -73,10 +80,6 @@ al apt="sudo apt"
 al syu ="apt update && apt upgrade && apt autoremove"
 al 
 
-# Prevent Accidents!
-al rm="rm -i"
-al cp="cp -i"
-al mv="mv -i'"
 
 # Info Aliases
 al now="date +'Time: %T' && date +'Date: %d/%m/%Y'"
