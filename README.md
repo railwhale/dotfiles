@@ -13,8 +13,9 @@ My ~/.bashrc checks for ~/.bash_config, ~/.dir_colors, and ~/.bash_aliases, in t
 ( https://zwischenzugs.com/2019/02/27/bash-startup-explained was helpful)
 
 
-
 # Install:
 To automatically install everything, copy and paste this command into your terminal:
 ```bash
-cd && git clone https://github.com/railwhale/dotfiles && cd dotfiles && ./install.sh
+cd && git clone https://github.com/railwhale/dotfiles && cd dotfiles && sudo ./install.sh
+```
+sudo is required because the script operates in /etc/, which
