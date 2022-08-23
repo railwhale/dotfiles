@@ -1,5 +1,20 @@
 # /etc/profile: system-wide .profile file for the Bourne shell
 # and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+############################################################
+#  ██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗
+#  ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝
+#  ██████╔╝██████╔╝██║   ██║█████╗  ██║██║     █████╗  
+#  ██╔═══╝ ██╔══██╗██║   ██║██╔══╝  ██║██║     ██╔══╝  
+#  ██║     ██║  ██║╚██████╔╝██║     ██║███████╗███████╗
+#  ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
+#
+# Contents:
+# Add Users PATHs
+# Check for and run /etc/bash.bashrc
+# Check for and run /etc/profile.d
+# Add User's private ~/bin
+# Check for and run ~/.bashrc
+ 
 
 if [ "`id -u`" -eq 0 ]; then
   PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -8,10 +23,8 @@ else
 fi
 export PATH
 
-if [ "${PS1-}" ]; then
+if [ "${PS1-}" ]; then # if [interactive]; then if bash and bash.bashrc exists, run bash.bashrc
   if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
-    # The file bash.bashrc already sets the default PS1.
-    # PS1='\h:\w\$ '
     if [ -f /etc/bash.bashrc ]; then
       . /etc/bash.bashrc
     fi
@@ -31,6 +44,16 @@ if [ -d /etc/profile.d ]; then
     fi
   done
   unset i
+fi
+
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Run the user's .bashrc
