@@ -20,7 +20,7 @@ My ~/.bashrc checks for ~/.bash_config, ~/.dir_colors, and ~/.bash_aliases, in t
 ## Install:
 
 To automatically install everything, copy and paste this command into your terminal:
-### full doesn't work correct, will fix later ()
+### full doesn't work correct, will fix later (something about sudo acess)
 ```bash
 cd && git clone https://github.com/railwhale/dotfiles && printf "Files retrived\n" && cd dotfiles && sudo ./install.sh
 ```
