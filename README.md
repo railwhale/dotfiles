@@ -16,10 +16,11 @@ My ~/.bashrc checks for ~/.bash_config, ~/.dir_colors, and ~/.bash_aliases, in t
 # Install:
 To automatically install everything, copy and paste this command into your terminal:
 ```bash
-cd && git clone https://github.com/railwhale/dotfiles && clear && cd dotfiles && sudo ./install.sh
+cd && git clone https://github.com/railwhale/dotfiles && printf "Files retrived\n" && cd dotfiles && && sudo ./install.sh
 ```
-sudo is required because the script operates in /etc/, which
+sudo is required because the script operates in /etc/, which requires root to edit
 
 ## Rootless Install
 ```bash
-cd && git clone https://github.com/railwhale/dotfiles && echo && cd dotfiles && chmod +x ./home-install.sh && ./home-install.sh
+cd && git clone https://github.com/railwhale/dotfiles && printf "Files retrived\n" && cd dotfiles && ./home-install.sh
+```
