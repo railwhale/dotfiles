@@ -9,10 +9,10 @@
 #  ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
 ##########################################################
 
-# Makes this file smaller
+# Make this file smaller
 alias al="alias"
 
-# some very basic ones
+# Aome very basic ones
 al cl="clear"                # Logical
 al his="history"             # Quicker
 al nano="vim"                # Hehe
@@ -21,9 +21,10 @@ al svi="sudo vim"            # Quicker
 al edal="v ~/.bash_aliases"  # Edit bash aliases
 al edrc="v ~/.bashrc"        # Edit bashrc
 al bash="source ~/.bashrc"   # So you don't have to exit many times if you are editing esting .bashrc or .bash_aliases
-al ?="man"
+al ?="man"                   # Quicker
+al :q="exit"                 # Quicker
 
-# file management (ls, cd,) aliases
+# File management (ls, cd, others) aliases
 al ls="ls --sort=extension --color=auto"
 al ll="ls -l"
 al la="ls -a"
@@ -32,7 +33,6 @@ al lg="la | grep"
 al .="cd .."
 al ...="cd .. && cd .."
 alias mkdir="mkdir -pv"
-
 
 # Prevent Accidents!
 al rm="rm -i"
@@ -86,6 +86,7 @@ al now="date +'Time: %T' && date +'Date: %d/%m/%Y'"
 al sys-info="neofetch && uname -a && date"
 al neo="neofetch"
 al neof="neo --cpu_temp C"
+
 
 # Crouton Aliases
 
