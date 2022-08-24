@@ -12,6 +12,7 @@ followed by ~/.bash_profile OR ~/.bash_login OR ~/.profile, in that order.
 
 If it's not a login shell, (e.g. in bash you enter the command ```bash``` to start another instance in the same session),
 then /etc/bash.bashrc and ~/.bashrc are run (and any files that are called in those files)
+
 ( https://zwischenzugs.com/2019/02/27/bash-startup-explained was helpful)
 
 My ~/.bashrc checks for ~/.bash_config, ~/.dir_colors, and ~/.bash_aliases, in that order.
