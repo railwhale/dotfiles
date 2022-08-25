@@ -30,8 +30,14 @@ if [ -f ~/.bash_config ]; then
   mv ~/.bash_config ~/old-bash-config
 fi
 
-mv /etc/profile ~/old-bash-config/etc-profile
-mv /etc/bash.bashrc ~/old-bash-config/bash.bashrc
+if [ -f /etc/profile ]; then
+  mv /etc/profile ~/old-bash-config/etc-profile
+fi
+
+if [ -f /etc/bash.bashrc ]; then
+  mv /etc/bash.bashrc ~/old-bash-config/bash.bashrc
+fi
+
 
 cp /home/$USER/dotfiles/bash/~/* ~        # copy all files in dotfiles/bash/~ (bashrc, bash aliases, more) to users home
 cp /home/$USER/dotfiles/bash/etc/* /etc/   # copy all file
