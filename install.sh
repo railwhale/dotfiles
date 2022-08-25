@@ -37,7 +37,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   cp ~/dotfiles/bash/~/* ~ # copy all files in dotfiles/bash/~ (bashrc, bash aliases, more) to users home
   cp ~/dotfiles/bash/etc/* /etc/ # copy all file
   
-  read -p " Apply config to current session? [y/N] (screen will clear)" -n 1 -r
+  read -p " Apply config to current session? [y/N] (screen will clear)" -r
   if [[ $REPLY =~ ^[Yy]$ ]]; then 
     source .bashrc
   fi
