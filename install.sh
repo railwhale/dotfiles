@@ -7,7 +7,7 @@ echo Replaced files will be moved to $HOME/old-bash-config
 echo
 
 read -p "Please confirm install [y/n] " -r
-if [ $REPLY =~ ^[Yy]$ ]; then
+if [ $REPLY = ^[Yy]$ ]; then
   cd
   mkdir old-bash-config
   mv ~/.bashrc ~/old-bash-config
