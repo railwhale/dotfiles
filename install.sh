@@ -4,7 +4,7 @@ echo This will replace your .bashrc, .profile or .bash_login, or bash_profile, a
 echo /etc/bash.bashrc, and /etc/profile will also be replaced
 echo Replaced files will be moved to $HOME/old-bash-config
 
-read -p "Please confirm install [y/n] " - 1 -r
+read -p "Please confirm install [y/n] " -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   cd
