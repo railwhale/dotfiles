@@ -1,0 +1,45 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+
+HISTTIMEFORMAT="%F %T"
+HISTCONTROL=ignoredups 
+
+alias ls='ls --color=auto'
+PS1='[\A] \u@\h:\w$ '
+
+blk='\[\033[01;30m\]'   # Black
+wht='\[\033[01;37m\]'   # White
+red='\[\033[01;31m\]'   # Red
+ylw='\[\033[01;33m\]'   # Yellow
+grn='\[\033[01;32m\]'   # Green
+cyn='\[\033[01;36m\]'   # Cyan
+blu='\[\033[01;34m\]'   # Blue
+pur='\[\033[01;35m\]'   # Purple
+clr='\[\033[00m\]'      # Reset
+
+#Startup commands:
+date | lolcat
+printf "\n"
+
+# Aliases:
+alias sysfo="neofetch && duf && echo ' ' && lsblk && lscpu && uname -a && date | lolcat"
+alias treee="tree -hqvdx"
+alias basfo="neofetch && duf && pwd -LP && uname -a"
+alias cl="clear"
+alias his="history"
+alias down="sudo shutdown now"
+
+
+#Functions:
+function find_big() {
+    du -h -x -s -- * | sort -r -h | head -20;
+}
+
+function hg() {
+    history | grep "$1";
+}
