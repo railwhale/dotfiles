@@ -11,8 +11,8 @@
 # Contents:
 # Add Users PATHs
 # Check for and run /etc/bash.bashrc
-# Check for and run /etc/profile.d
-# Add User's private ~/bin
+# Run any shell script (*.sh) files in /etc/profile.d
+# Add User's private ~/bin to $PATH variable
 # Check for and run ~/.bashrc
  
 
@@ -23,7 +23,7 @@ else
 fi
 export PATH
 
-if [ "${PS1-}" ]; then # if [interactive]; then if bash and bash.bashrc exists, run bash.bashrc
+if [ "${PS1-}" ]; then # if [interactive]; then if bash, but not generic bash, if /etc/bash.bashrc exists, run it
   if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
     if [ -f /etc/bash.bashrc ]; then
       . /etc/bash.bashrc
@@ -37,10 +37,10 @@ if [ "${PS1-}" ]; then # if [interactive]; then if bash and bash.bashrc exists, 
   fi
 fi
 
-if [ -d /etc/profile.d ]; then
-  for i in /etc/profile.d/*.sh; do
-    if [ -r $i ]; then
-      . $i
+if [ -d /etc/profile.d ]; then        # If /etc/profile.d exists:
+  for i in /etc/profile.d/*.sh; do    # for every shell script in profile.d
+    if [ -r $i ]; then                # 
+      . $i                            # Run script 'i'
     fi
   done
   unset i
