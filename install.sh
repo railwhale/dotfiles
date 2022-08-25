@@ -6,40 +6,37 @@ echo /etc/bash.bashrc, and /etc/profile will also be replaced
 echo Replaced files will be moved to $HOME/old-bash-config
 echo
 
-read -p "Please confirm install [y/n] " -r
-if [ $REPLY = ^[Yy]$ ]; then
-  cd
-  mkdir old-bash-config
-  mv ~/.bashrc ~/old-bash-config
-  
-  if [ -f ~/.bash_profile ]; then
-    mv ~/.bash_profile ~/old-bash-config
-  fi
-  
-  if [ -f ~/.bash_login ]; then
-    mv ~/.bash_login ~/old-bash-config
-  fi
-  
-  if [ -f ~/.profile ]; then
-    mv ~/.profile ~/old-bash-config
-  fi
-  
-  if [ -f ~/.bash_aliases ]; then
-    mv ~/.bash_aliases ~/old-bash-config
-  fi
-  
-  if [ -f ~/.bash_config ]; then
-    mv ~/.bash_config ~/old-bash-config
-  fi
-  
-  mv /etc/profile ~/old-bash-config/etc-profile
-  mv /etc/bash.bashrc ~/old-bash-config/bash.bashrc
+cd
+mkdir old-bash-config
+mv ~/.bashrc ~/old-bash-config
 
-  cp ~/dotfiles/bash/~/* ~ # copy all files in dotfiles/bash/~ (bashrc, bash aliases, more) to users home
-  cp ~/dotfiles/bash/etc/* /etc/ # copy all file
-  
-  read -p " Apply config to current session? [y/N] (screen will clear)" -r
-  if [[ $REPLY =~ ^[Yy]$ ]]; then 
-    source .bashrc
-  fi
+if [ -f ~/.bash_profile ]; then
+  mv ~/.bash_profile ~/old-bash-config
+fi
+
+if [ -f ~/.bash_login ]; then
+  mv ~/.bash_login ~/old-bash-config
+fi
+
+if [ -f ~/.profile ]; then
+  mv ~/.profile ~/old-bash-config
+fi
+
+if [ -f ~/.bash_aliases ]; then
+  mv ~/.bash_aliases ~/old-bash-config
+fi
+
+if [ -f ~/.bash_config ]; then
+  mv ~/.bash_config ~/old-bash-config
+fi
+
+mv /etc/profile ~/old-bash-config/etc-profile
+mv /etc/bash.bashrc ~/old-bash-config/bash.bashrc
+
+cp ~/dotfiles/bash/~/* ~ # copy all files in dotfiles/bash/~ (bashrc, bash aliases, more) to users home
+cp ~/dotfiles/bash/etc/* /etc/ # copy all file
+
+read -p " Apply config to current session? [y/N] (screen will clear)" -r
+if [[ $REPLY = ^[Yy]$ ]]; then 
+  source .bashrc
 fi
