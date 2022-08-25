@@ -4,31 +4,30 @@ echo This will replace your .bashrc, .profile or .bash_login, or bash_profile, a
 echo /etc/bash.bashrc, and /etc/profile will also be replaced
 echo Replaced files will be moved to $HOME/old-bash-config
 
-read -p "Please confirm install [y/n] " -n 1 -r
+read -p "Please confirm install [y/n] " - 1 -r
 echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
+if [[ $REPLY =~ ^[Yy]$ ]]; then
   cd
   mkdir old-bash-config
   mv ~/.bashrc ~/old-bash-config
   
-  if [ -f ~/.bash_profile ] then
+  if [ -f ~/.bash_profile ]; then
     mv ~/.bash_profile ~/old-bash-config
   fi
   
-  if [ -f ~/.bash_login ] then
+  if [ -f ~/.bash_login ]; then
     mv ~/.bash_login ~/old-bash-config
   fi
   
-  if [ -f ~/.profile ] then
+  if [ -f ~/.profile ]; then
     mv ~/.profile ~/old-bash-config
   fi
   
-  if [ -f ~/.bash_aliases ] then
+  if [ -f ~/.bash_aliases ]; then
     mv ~/.bash_aliases ~/old-bash-config
   fi
   
-  if [ -f ~/.bash_config ] then
+  if [ -f ~/.bash_config ]; then
     mv ~/.bash_config ~/old-bash-config
   fi
   
@@ -39,8 +38,7 @@ then
   cp ~/dotfiles/bash/etc/* /etc/ # copy all file
   
   read -p " Apply config to current session? [y/N] (screen will clear)" -n 1 -r
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
+  if [[ $REPLY =~ ^[Yy]$ ]]; then 
     source .bashrc
   fi
 fi
