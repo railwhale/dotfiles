@@ -33,8 +33,8 @@ fi
 mv /etc/profile ~/old-bash-config/etc-profile
 mv /etc/bash.bashrc ~/old-bash-config/bash.bashrc
 
-cp ~/dotfiles/bash/~/* ~ # copy all files in dotfiles/bash/~ (bashrc, bash aliases, more) to users home
-cp ~/dotfiles/bash/etc/* /etc/ # copy all file
+cp /home/$USER/dotfiles/bash/~/* ~        # copy all files in dotfiles/bash/~ (bashrc, bash aliases, more) to users home
+cp /home/$USER/dotfiles/bash/etc/* /etc/   # copy all file
 
 read -p " Apply config to current session? [y/N] (screen will clear)" -r
 if [[ $REPLY = ^[Yy]$ ]]; then 
