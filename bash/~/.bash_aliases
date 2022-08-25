@@ -63,12 +63,10 @@ function extract() {
 
 
 # Colours:
-# Enable colour support of some common commands
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -80,13 +78,12 @@ al apt="sudo apt"
 al syu ="apt update && apt upgrade && apt autoremove"
 al 
 
+# Functions:
 
-# Info Aliases
-al now="date +'Time: %T' && date +'Date: %d/%m/%Y'"
-al sys-info="neofetch && uname -a && date"
-al neo="neofetch"
-al neof="neo --cpu_temp C"
-
+# Search through your history
+function hg() {
+    history | grep "$1";
+}
 
 # Crouton Aliases
 
