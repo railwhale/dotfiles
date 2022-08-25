@@ -29,6 +29,6 @@ sudo is required because the script operates in /etc/, which requires root to ed
 
 ### Rootless Install
 ```bash
-cd && git clone https://github.com/railwhale/dotfiles && printf "Files retrived\n" && cd dotfiles && ./home-install.sh
+cd && git clone https://github.com/railwhale/dotfiles && cd dotfiles && ./home-install.sh
 ```
 Installs only .bashrc, .bash_profile, .bash_aliases, and .bash_config
