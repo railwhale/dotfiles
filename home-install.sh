@@ -7,7 +7,10 @@ echo Replaced files will be moved to ~/old-bash-config
 
 cd
 mkdir old-bash-config
-mv ~/.bashrc ~/old-bash-config
+
+if [ -f ~/.bashrc ]; then
+  mv ~/.bashrc ~/old-bash-config
+fi
 
 if [ -f ~/.bash_profile ]; then
   mv ~/.bash_profile ~/old-bash-config
@@ -31,4 +34,5 @@ fi
 
 cp ~/dotfiles/bash/~/* ~
 
-To apply these changes, restart your 
+
+To apply these changes, restart your terminal emulator
