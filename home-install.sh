@@ -25,7 +25,7 @@ if [ -f ~/.bash_aliases ]; then
   mv ~/.bash_aliases ~/old-bash-config
 fi
 
-if [ -f ~/.bash_config ] then
+if [ -f ~/.bash_config ]; then
   mv ~/.bash_config ~/old-bash-config
 fi
 
