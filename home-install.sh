@@ -33,7 +33,7 @@ if [ -f ~/.bash_config ]; then
 fi
 
 shopt -s globstar            # make the ' ** ' (double star) pattern match everything a in directory
-cp ~/dotfiles/bash/~/** ~    #
+cp -r ~/dotfiles/bash/~/** ~    #
 
 
 echo To apply these changes, restart your terminal emulator
