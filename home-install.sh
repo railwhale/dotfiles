@@ -35,4 +35,4 @@ fi
 cp ~/dotfiles/bash/~/* ~
 
 
-To apply these changes, restart your terminal emulator
+# To apply these changes, restart your terminal emulator
