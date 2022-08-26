@@ -5,39 +5,30 @@
 echo This will replace .bashrc, .bash_profile/.bash_login/.profile, and replace or create .bash_aliases and .bash_config
 echo Replaced files will be moved to ~/old-bash-config
 
-read -p "Please confirm install [Y/n] " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  cd
-  mkdir old-bash-config
-  mv ~/.bashrc ~/old-bash-config
-  
-  if [ -f ~/.bash_profile ] then
-    mv ~/.bash_profile ~/old-bash-config
-  fi
-  
-  if [ -f ~/.bash_login ] then
-    mv ~/.bash_login ~/old-bash-config
-  fi
-  
-  if [ -f ~/.profile ] then
-    mv ~/.profile ~/old-bash-config
-  fi
-  
-  if [ -f ~/.bash_aliases ] then
-    mv ~/.bash_aliases ~/old-bash-config
-  fi
-  
-  if [ -f ~/.bash_config ] then
-    mv ~/.bash_config ~/old-bash-config
-  fi
+cd
+mkdir old-bash-config
+mv ~/.bashrc ~/old-bash-config
 
-  cp ~/dotfiles/bash/~/* ~
-  
-  read -p " Apply config to current session? [Y/n] " -n 1 -r
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
-    source .bashrc
-  fi
+if [ -f ~/.bash_profile ] then
+  mv ~/.bash_profile ~/old-bash-config
 fi
+
+if [ -f ~/.bash_login ] then
+  mv ~/.bash_login ~/old-bash-config
+fi
+
+if [ -f ~/.profile ] then
+  mv ~/.profile ~/old-bash-config
+fi
+
+if [ -f ~/.bash_aliases ] then
+  mv ~/.bash_aliases ~/old-bash-config
+fi
+
+if [ -f ~/.bash_config ] then
+  mv ~/.bash_config ~/old-bash-config
+fi
+
+cp ~/dotfiles/bash/~/* ~
+
+To apply these changes, restart your 
