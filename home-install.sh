@@ -32,8 +32,8 @@ if [ -f ~/.bash_config ]; then
   mv ~/.bash_config ~/old-bash-config
 fi
 
-shopt -s globstar            # make the ' ** ' (double star) pattern match everything a in directory
-cp -r ~/dotfiles/bash/~/** ~    #
+shopt -s globstar              # make the ' ** ' (double star) pattern match everything a in directory
+cp -r ~/dotfiles/bash/home/** ~   #
 cd
 
 echo To apply these changes, restart your terminal emulator
