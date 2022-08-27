@@ -3,7 +3,8 @@ clear
 echo /etc/bash.bashrc, and /etc/profile will also be replaced
 echo
 
-. ~/dotfiles/home-install.sh
+chmod +x ./home-install.sh   #
+. ~/dotfiles/home-install.sh # Install the non-root configs
 
 if [ -f /etc/profile ]; then
   mv /etc/profile ~/old-bash-config/etc-profile
