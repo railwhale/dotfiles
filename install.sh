@@ -17,5 +17,3 @@ fi
 shopt -s globstar
 sudo cp -r /home/$USER/dotfiles/bash/etc/** /etc/     # copy all files in dotfile/bash/etc to /etc/
 cd
-
-echo To apply these changes, restart your terminal emulator
