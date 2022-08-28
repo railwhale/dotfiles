@@ -20,7 +20,7 @@ export EDITOR=${EDITOR:-/bin/vim}
 
 # Set prompt style
 # e.g: [username@hostname ~] $
-PS1='[\A] \u@\h: \W\n $ '
+PS1='[\A] \u@\h: \W\n\$ '
 # The above template makes this prompt:
 # [2:34] railwhale@github: ~/Downloads
 #  $ 
