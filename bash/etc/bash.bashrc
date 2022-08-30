@@ -9,6 +9,11 @@
 # Set default prompt
 PS1='\u@\h:\w $ '
 
+# Use Red name for root
+if [ "${UID}" -eq "0" ]; then 
+  nameC="${txtred}" 
+fi
+
 # This template makes this prompt:
 # 'user@host:~/Folder $ '
 # To make your own prompt, copy the template to your .bashrc or something like that, then edit it there.
