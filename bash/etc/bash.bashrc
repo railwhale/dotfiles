@@ -6,6 +6,11 @@
 ## If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+if [ -f /etc/colors ]; then
+  . /etc/colors
+fi
+
+
 # Set default prompt
 PS1='\u@\h:\w $ '
 
