@@ -23,6 +23,8 @@ al edrc="v ~/.bashrc"        # Edit bashrc
 al bash="source ~/.bashrc"   # So you don't have to exit many times if you are editing esting .bashrc or .bash_aliases
 al ?="man"                   # Quicker
 al :q="exit"                 # Quicker
+al g="grep $1"               #
+al sudo="sudo "              # 
 
 # File management (ls, cd, others) aliases
 al ls="ls --sort=extension --color=auto"
