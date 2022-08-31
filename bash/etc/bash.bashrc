@@ -1,34 +1,30 @@
 # /etc/bash.bashrc: A system-wide .bashrc file for interactive bash(1) shells.
 
-# To enable the settings and commands in this file for login shells as well,
-# this file has to be sourced in /etc/profile.
-
 ## If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-if [ -f /etc/colors ]; then
-  . /etc/colors
+if [ -f /etc/colors ]; then   # If /etc/colors exists, 
+  . /etc/colors               # Run it
 fi
 
 
 # Set default prompt
-PS1='\u@\h:\w $ '
+PS1='\u@\h:\w \$ '     # == 'user@host:~/Directory $ '
 
-# Use Red name for root
+# To make your own prompt, copy the template to your .bashrc or something like that, then edit it there.
+
+# Use a red name for root
 if [ "${UID}" -eq "0" ]; then 
   nameC="${txtred}" 
 fi
 
-# This template makes this prompt:
-# 'user@host:~/Folder $ '
-# To make your own prompt, copy the template to your .bashrc or something like that, then edit it there.
 
 # Enable bash completion in interactive shells
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+if ! shopt -oq posix; then                                      # If shell option 'posix' is disabled, then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then    # If/usr/share/bash-completion/bash_completion exists, 
+    . /usr/share/bash-completion/bash_completion                # Run it
+  elif [ -f /etc/bash_completion ]; then                        # otherwise, if /etc/bash_completion exists,
+    . /etc/bash_completion                                      # Run
   fi
 fi
 
