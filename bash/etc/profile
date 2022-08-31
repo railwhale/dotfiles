@@ -1,32 +1,24 @@
 # /etc/profile: system-wide .profile file for the Bourne shell
 # and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
 ############################################################
-#  ██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗
-#  ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝
-#  ██████╔╝██████╔╝██║   ██║█████╗  ██║██║     █████╗  
-#  ██╔═══╝ ██╔══██╗██║   ██║██╔══╝  ██║██║     ██╔══╝  
-#  ██║     ██║  ██║╚██████╔╝██║     ██║███████╗███████╗
-#  ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
-#
 # Contents:
 # Add Users PATHs
 # Check for and run /etc/bash.bashrc
 # Run any shell script (*.sh) files in /etc/profile.d
 # Add User's private /bin to $PATH variable
-# Check for and run ~/.bashrc
- 
 
 if [ "`id -u`" -eq 0 ]; then
-  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"  # If root, check these dirs for programs
 else
-  PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+  PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"      # If not root, check these dirs for programs
 fi
 export PATH
 
-if [ "${PS1-}" ]; then # if [interactive]; then if bash, but not generic bash, if /etc/bash.bashrc exists, run it
-  if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
-    if [ -f /etc/bash.bashrc ]; then
-      . /etc/bash.bashrc
+if [ "${PS1-}" ]; then                                    # If shell is interactive, then
+  if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then     # If shell is bash, but not generic bash (sh),
+    if [ -f /etc/bash.bashrc ]; then                      # If /etc/bash.bashrc exists,
+      . /etc/bash.bashrc                                  # Run it
     fi
   else
     if [ "`id -u`" -eq 0 ]; then
@@ -38,8 +30,8 @@ if [ "${PS1-}" ]; then # if [interactive]; then if bash, but not generic bash, i
 fi
 
 if [ -d /etc/profile.d ]; then        # If /etc/profile.d exists:
-  for i in /etc/profile.d/*.sh; do    # for every shell script in profile.d
-    if [ -r $i ]; then                # 
+  for i in /etc/profile.d/*.sh; do    # For every shell script in /etc/profile.d
+    if [ -r $i ]; then                # idk
       . $i                            # Run script 'i'
     fi
   done
@@ -49,14 +41,9 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$HOME/bin:$PATH"            # Make the shell check ~/bin for executables when you enter a command
 fi
 
 if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-# Run the user's .bashrc
-if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
+    PATH="$HOME/.local/bin:$PATH"     # Make the shell check ~/.local/bin for executables when you enter a command
 fi
