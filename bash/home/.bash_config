@@ -2,6 +2,8 @@
 # bash startup, so ~/.bashrc doesn't get cluttered
 # My bash configurations, runs every time ~/.bashrc is called
 
+[ -z "$PS1" ] && return # If not interactive, do nothing (for safety)
+
 # Contents:
 # vi stuff
 # prompt style
@@ -45,7 +47,10 @@ HISTCONTROL=ignoreboth
 # Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
- 
+if [ -f ~/.colors ]; then
+   . ~/.colors
+fi
+
 # Colours have names too. Stolen from github/tomnomnom/dotfiles who stole from Arch wiki
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red
