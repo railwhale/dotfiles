@@ -22,10 +22,10 @@ al sudo="sudo "              #
 # File management (ls, cd, others) aliases
 al ls="ls --sort=extension --color=auto"
 al ll="ls -l"
-al la="ls -a"
-al lf="ls -la"
+al la="ls -A"
+al lf="ls -lA"
 al lg="la | grep"
-al .="cd .."
+al ..="cd .."
 al ...="cd .. && cd .."
 alias mkdir="mkdir -pv"
 
@@ -65,7 +65,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-fi
+
 
 
 # apt aliases
