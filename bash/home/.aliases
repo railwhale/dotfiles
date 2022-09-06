@@ -18,6 +18,7 @@ al ?="man"                   # Quicker
 al :q="exit"                 # Quicker
 al g="grep $1"               #
 al sudo="sudo "              # 
+al cat="cst"
 
 # File management (ls, cd, others) aliases
 al ls="ls --sort=extension --color=auto"
