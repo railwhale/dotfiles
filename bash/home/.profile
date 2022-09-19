@@ -1,8 +1,10 @@
-# ~/.bash_profile: executed by the command interpreter for login shells (After /etc/profile).
+# ~/.profile: executed by the command interpreter for login shells (After /etc/profile).
 
 # This file is the first of three in your home that any shell checks for when it starts.
-# The order of these checks is typicaly ~/.SHELL_profile, ~/.SHELL_login, ~/.profile
-# This file is called ~/.profile, so it will
+# The order of these checks is typically ~/.<SHELL>_profile, ~/.<SHELL>_login, ~/.profile
+# This file is called .profile, so it has the lowest priority, but it will work with all shells
+# This is pretty empty,
+
 
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
@@ -13,11 +15,18 @@
 
 if [ -n "$BASH_VERSION" ]; then   # If running bash;
     if [ -f "~/.bashrc" ]; then   # If user has a .bashrc;
-        . "$HOME/.bashrc"         # Run it
+        . "~/.bashrc"             # Run it
     fi
 fi
+
 if [ -n "$FISH_VERSION" ]; then   # If running fish;
     if [ -f "~/.fishrc" ]; then   # If user has a .fishrc;
-        . "$HOME/.bashrc"         # Run it
+        . "~/.fishrc"             # Run it
+    fi
+fi
+
+if [ -n "$ZSH_VERSION" ]; then   # If running zsh;
+    if [ -f "~/.zshrc" ]; then   # If user has a .fishrc;
+        . "~/.zshrc"             # Run it
     fi
 fi
