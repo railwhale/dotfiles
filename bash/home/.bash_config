@@ -41,13 +41,17 @@ shopt -s dotglob
 shopt -s histappend                # Do not overwrite history
 shopt -s expand_aliases            # Expand aliases
 shopt -s checkwinsize              # Checks terminal window size when bash regains control
-shopt -s globstar                  # Make ' ** ' match every item in a directory
+
 
 # Dont put duplicate lines or lines starting with space in history
 HISTCONTROL=ignoreboth
 
 # Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
+
+
+
+# Colour stuff:
 
 if [ -f ~/.colors ]; then
    . ~/.colors
