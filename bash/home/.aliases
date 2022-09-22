@@ -58,7 +58,10 @@ function extract() {
 }
 
 
-# Miscellaneous Functions:
+
+# Miscellaneous Aliases and Functions:
+
+al showvars=""
 
 # Search through your history
 function hg() {
