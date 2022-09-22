@@ -49,7 +49,8 @@ HISTCONTROL=ignoreboth
 # Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
-
+# Create a list of existing variables stored in $VARIABLES
+VARIABLES="$(set)"
 
 # Colour stuff:
 
