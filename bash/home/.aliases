@@ -11,26 +11,25 @@ al cl="clear "                # Logical
 al his="history "             # Quicker
 al nano="vim "                # Hehe
 al v="vim "                   # Quicker
-al svi="sudo vim "             # Quicker
-al edal="v ~/.bash_aliases"   # Edit bash aliases
+al svi="sudo vim "            # Quicker
+al edal="v ~/.aliases"        # Edit aliases
 al edrc="v ~/.bashrc"         # Edit bashrc
-al bash="source ~/.bashrc"    # So you don't have to exit many times if you are editing esting .bashrc or .bash_aliases
 al ?="man "                   # Quicker
 al :q="exit"                  # Quicker
 al g="grep "                  # Quicker
-al sudo="sudo "               # So sudo works 
+al sudo="sudo "               # So sudo works
 
 
 # File management (ls, cd, others) aliases
-al ls="ls --sort=extension --color=auto"
+al ls="ls --sort=extension --color=auto --group-directories-first"
 al ll="ls -l"
 al la="ls -A"
 al lf="ls -lAh"
 al lg="lf | grep"
+al cls=""
 al ..="cd .."
 al ...="cd .. && cd .."
 alias mkdir="mkdir -pv"
-
 # Prevent Accidents!
 al rm="rm -i"
 al cp="cp -i"
@@ -69,7 +68,7 @@ function hg() {
 
 # Crouton Aliases
 al inkde="sudo startkde"
-al ="sudo enter-chroot"
+
 
 # So I don't have to type them out
 al kbus-make="sudo crouton -r buster -t core,x11,audio,gtk-extra,cli-extra,extension,keyboard,xiwi,xorg,kde,kde-desktop"
