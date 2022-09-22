@@ -6,7 +6,7 @@
 # Make this file smaller
 alias al="alias"
 
-# Aome very basic ones
+# Basic aliases
 al cl="clear "                # Logical
 al his="history "             # Quicker
 al nano="vim "                # Hehe
@@ -18,7 +18,7 @@ al ?="man "                   # Quicker
 al :q="exit"                  # Quicker
 al g="grep "                  # Quicker
 al sudo="sudo "               # So sudo works
-
+al =""
 
 # File management (ls, cd, others) aliases
 al ls="ls --sort=extension --color=auto --group-directories-first"
@@ -26,7 +26,8 @@ al ll="ls -l"
 al la="ls -A"
 al lf="ls -lAh"
 al lg="lf | grep"
-al cls=""
+al cls="cl && ls"
+al sls=""
 al ..="cd .."
 al ...="cd .. && cd .."
 alias mkdir="mkdir -pv"
