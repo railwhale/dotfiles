@@ -1,8 +1,8 @@
 # To install only the user-specific files, use home-install.sh
 clear
 
-chmod +x ./home-install.sh   # Make home-install executable
-. ~/dotfiles/home-install.sh # Install the non-root configs
+chmod +x ./home-install.sh     # Make home-install executable
+. ~/dotfiles/home-install.sh   # Install the non-root configs
 
 
 if [ -f /etc/profile ]; then
@@ -13,5 +13,5 @@ if [ -f /etc/bash.bashrc ]; then
   mv /etc/bash.bashrc ~/old-bash-config/bash.bashrc
 fi
 
-sudo cp -r~/dotfiles/bash/etc/* /etc/     # copy all files in dotfile/bash/etc to /etc/
+sudo cp -r ~/dotfiles/bash/etc/* /etc/     # copy all files in dotfile/bash/etc to /etc/
 cd
