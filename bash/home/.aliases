@@ -59,20 +59,15 @@ function extract() {
 }
 
 
-
-# Miscellaneous Aliases and Functions:
-
-al showvars=""
-
 # Search through your history
 function hg() {
     history | grep "$1";
 }
 
 
+
 # Crouton Aliases
 al inkde="sudo startkde"
-
 
 # So I don't have to type them out
 al kbus-make="sudo crouton -r buster -t core,x11,audio,gtk-extra,cli-extra,extension,keyboard,xiwi,xorg,kde,kde-desktop"
