@@ -2,8 +2,7 @@
 
 # If you want to install all dotfiles, use install.sh
 
-echo This will replace .bashrc, .bash_profile/.bash_login/.profile, and replace or create .bash_aliases and .bash_config
-echo Replaced files will be moved to ~/old-bash-config
+echo Replaced files will be moved to $HOME/old-bash-config
 
 cd
 mkdir old-bash-config
@@ -32,7 +31,7 @@ if [ -f ~/.bash_config ]; then
   mv ~/.bash_config ~/old-bash-config
 fi
 
-cp -r ~/dotfiles/bash/home/** ~   #
+cp -r ~/dotfiles/bash/home/* $HOME
 cd
 
 echo
