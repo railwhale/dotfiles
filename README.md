@@ -1,13 +1,13 @@
-# My-config
+# My Dotfiles
 My personal configuration and setup stuff (.bashrc, .config, etc)
-# this is 
+
 
 The may be a lot of *borrowed* stuff in all dotfiles.
 Feel free to borrow from me.
 
 Because it can be confusing, here is a somewhat good explanation on the order the files are run:
 If the shell is a login shell (e.g. you open a terminal emulator on the host or login via ssh) , /etc/profile is run, 
-followed by ~/.bash_profile OR ~/.bash_login OR ~/.profile, in that order.
+followed by ~/.$SHELL_profile OR ~/.$SHELL_login OR ~/.profile, in that order.
 
 If it's not a login shell, (e.g. in bash you enter the command ```bash``` to start another instance in the same session),
 then /etc/bash.bashrc and ~/.bashrc are run (and any files that are called in those files)
