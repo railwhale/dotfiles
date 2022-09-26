@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# /etc/colors: called by /etc/profile
-# /etc/colors: a shell script to name colours
+# /etc/colors: A shell script to name colours, called by /etc/profile
 
 # Basic colours
 blk='\033[01;30m'     # Black
@@ -15,7 +14,7 @@ pnk='\033[01;31m'     # Pink
 pur='\033[01;35m'     # Purple
 clr='\033[00m'        # Reset
 
-# Text color presets (normal, )
+# Text color presets (More of the above)
 if [ -f /etc/txt_colors ]; then
    . /etc/txt_colors
 fi
