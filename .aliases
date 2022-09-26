@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+
+# ~/.aliases: An optional (but recommended) file for all your shell aliases
+# My aliases
+
+# Make this file smaller
+alias al="alias"
+
+# Basic aliases
+al cl="clear "                # Logical
+al his="history "             # Quicker
+al nano="vim "                # Hehe
+al v="vim "                   # Quicker
+al svi="sudo vim "            # Quicker
+al edal="v ~/.aliases"        # Edit aliases
+al edrc="v ~/.bashrc"         # Edit bashrc
+al ?="man "                   # Quicker
+al :q="exit"                  # Quicker
+al g="grep "                  # Quicker
+al sudo="sudo "               # So sudo works
+al =""
+
+# File management (ls, cd, others) aliases
+al ls="ls --sort=extension --color=auto --group-directories-first"
+al ll="ls -l"
+al la="ls -A"
+al lf="ls -lAh"
+al lg="lf | grep"
+al cls="cl && ls"
+al sls=""
+al ..="cd .."
+al ...="cd .. && cd .."
+alias mkdir="mkdir -pv"
+# Prevent Accidents!
+al rm="rm -i"
+al cp="cp -i"
+al mv="mv -i'"
+
+# Multipurpose extractor (from github/wrfly/bash_aliases)
+function extract() { 
+    if [ -f $1 ] ; then 
+      case $1 in 
+        *.tar.bz2)   tar xjf $1     ;; 
+        *.tar.gz)    tar xzf $1     ;; 
+        *.bz2)       bunzip2 $1     ;; 
+        *.rar)       unrar e $1     ;; 
+        *.gz)        gunzip $1      ;; 
+        *.tar)       tar xf $1      ;; 
+        *.tbz2)      tar xjf $1     ;; 
+        *.tgz)       tar xzf $1     ;; 
+        *.zip)       unzip $1       ;; 
+        *.Z)         uncompress $1  ;; 
+        *.7z)        7z x $1        ;; 
+        *)     echo "'$1' cannot be extracted via extract()" ;; 
+         esac 
+     else 
+         echo "'$1' is not a valid file" 
+     fi 
+}
+
+
+# Search through your history
+function hg() {
+    history | grep "$1";
+}
+
+
+
+# Crouton Aliases
+al inkde="sudo startkde"
+
+# So I don't have to type them out
+al kbus-make="sudo crouton -r buster -t core,x11,audio,gtk-extra,cli-extra,extension,keyboard,xiwi,xorg,kde,kde-desktop"
+
+al cd-bust="cd /mnt/stateful_partition/crouton/chroots/buster"
