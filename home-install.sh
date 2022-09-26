@@ -2,7 +2,7 @@
 
 # If you want to install all dotfiles, use install.sh
 
-echo Replaced files will be moved to $HOME/old-bash-config
+echo -e Replaced files will be moved to $HOME/old-bash-config
 
 cd
 mkdir old-bash-config
