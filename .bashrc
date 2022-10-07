@@ -30,5 +30,5 @@ fi
 # Startup commands
 cd ~            # I use this for Chrome OS, because it starts chronos in /
 clear           # Also for Chrome OS, to clear away the crosh prompt, but also works fine for everything else
-date | lolcat   # Shows the time and date of login, with lolcat if you want
+date | lolcat || date  # Shows the time and date of login, with lolcat if you want
 echo            # A line between the date and your prompt
